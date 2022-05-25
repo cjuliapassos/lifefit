@@ -1,60 +1,49 @@
-import { Profile } from "../components/Profile"
-import { ExperienceBar } from "../components/ExperienceBar";
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import styles from '../styles/pages/Home.module.css';
-import { Countdown } from "../components/Countdown";
-import { ChallengeBox } from "../components/ChallengeBox";
-
-
+// import { useEffect } from 'react';
+// import { getSession, signIn, useSession, Session } from 'next-auth/client';
+import React from 'react';
+// import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { CountdownProvider } from "../contexts/CountdownContext";
-import { ChallengesProvider } from "../contexts/ChallengesContext";
-import { GetServerSideProps } from "next";
 
-interface HomeProps {
-  level: number,
-  currentExperience: number,
-  challengesCompleted: number;
-}
+// import { GoMarkGithub } from 'react-icons/go';
+// import { FaGoogle } from 'react-icons/fa';
+// import { FiLogIn } from 'react-icons/fi';
 
-export default function Home(props: HomeProps) {
+import styles from '../styles/pages/Home.module.css';
+
+// interface HomeProps {
+//   session: Session;
+// }
+
+export default function Home() {
+  // const router = useRouter();
+
+  // useEffect(() => {
+  //   if(session) {
+  //     router.push('/dashboard');
+  //   }
+  // }, [session, router]);
+
   return (
-    <ChallengesProvider level={props.level} 
-    currentExperience={props.currentExperience} 
-    challengesCompleted={props.challengesCompleted}>
-      <div className={styles.container}> 
-        <Head>
-          <title>Início | Move.it</title>
-        </Head>
+    <div className={styles.container}>
+      <Head>
+        <title>Login | Life Fit</title>
+      </Head>
 
-        <ExperienceBar />
+     
 
-        <CountdownProvider>
-         <section>
-            <div>
-             <Profile />
-             <CompletedChallenges />
-             <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+      <div className={styles.container}>
+        <img src="/logo.png" alt="Move.it" width="400" height="300"/>
+
+        <h2>Bem-vindo </h2>
+    
+     
+     
+
+        <a className={styles.botao} href='/dashboard' type="button" >
+          {/* <FaGoogle size={24} /> */}
+          Clique aqui para continuar
+        </a>
       </div>
-    </ChallengesProvider>
+    </div>
   )
-}
-//Aqui é o arquivo que mexe na estrutura do documento.
-
-export const getServerSideProps: GetServerSideProps = async (ctx)=>{
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-
-  return {
-    props: {
-      level: Number(level), 
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted)
-    }
-  }
 }

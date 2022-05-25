@@ -16,3 +16,24 @@
     gap: 6.25rem;
     align-content: center;
 }
+
+.botao {
+    width: 250px;
+    height: 55px;
+    background-color: rgb(53, 169, 246);
+    color: white;
+    border: 1px rgba(105, 187, 250, 0.667) solid;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 5px;
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.botao:hover {
+    border: 1px rgba(105, 250, 141, 0.667) solid;
+    background-color: rgb(37, 247, 152);
+}

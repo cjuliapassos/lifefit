@@ -6,16 +6,16 @@
 
 :root{
     --white:#fff;
-    --backgroung: #f2f3f5;
+    --backgroung: #f3f3f3;
     --gray-line:#DCDDE0;
-    --text: #666666;
+    --text: #4e4040;
     --text-highlight: #B3B9FF;
     --title: #2E384D;
-    --red: #E83F5B;
-    --green: #4CD62B;
-    --blue: #5965E0;
-    --blue-dark: #4952B8;
-    --blue-twitter: #2AA9E0;
+    --red: #c02841;
+    --green: rgb(37, 247, 72);
+    --blue:  rgb(6, 100, 163);
+    --blue-dark: #1b237c;
+    --blue-twitter: #73c7eb;
 }
 
 @media(max-width: 1080px){
